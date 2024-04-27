@@ -61,7 +61,7 @@ kfree(void *pa)
   acquire(&kmem.lock);
   r->next = kmem.freelist;
   kmem.freelist = r;
-  kmem.freemem += 1;
+  kmem.freemem += PGSIZE;
   release(&kmem.lock);
 }
 
@@ -77,7 +77,7 @@ kalloc(void)
   r = kmem.freelist;
   if(r) {
     kmem.freelist = r->next;
-    kmem.freemem -= 1;
+    kmem.freemem -= PGSIZE;
   }
   release(&kmem.lock);
 
