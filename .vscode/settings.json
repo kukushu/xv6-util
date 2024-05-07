@@ -1,0 +1,23 @@
+{
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.enterExec",
+            "sequence": [
+                "repl.action.acceptInput",
+                {"command": "editor.action.insertSnippet", "args": {"snippet": "-exec "}}
+            ]
+        }
+    ],
+    "files.associations": {
+        "*.c": "cpp",
+        "array": "cpp",
+        "chrono": "cpp",
+        "compare": "cpp",
+        "functional": "cpp",
+        "ratio": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "*.tcc": "cpp"
+    }
+}
